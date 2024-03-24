@@ -1,0 +1,62 @@
+player1 = document.getElementsByTagName('img')[0];
+player2 = document.getElementsByTagName('img')[1];
+btn = document.getElementById('btn');
+winner = document.getElementsByClassName('phase')[0];
+
+btn.addEventListener('click', function(event){
+
+    event.preventDefault
+
+    rng1 = Math.floor(Math.random() * 6 + 1)
+    rng2 = Math.floor(Math.random() * 6 + 1)
+
+    console.log(rng1, rng2)
+
+    if (rng1 === 1){
+        player1.src = '/imgs/dado1-removebg.png'
+    } else if (rng1 === 2){
+        player1.src = '/imgs/dado2-removebg.png'
+    } else if (rng1 === 3){
+        player1.src = '/imgs/dado3-removebg.png'
+    } else if (rng1 === 4){
+        player1.src = '/imgs/dado4-removebg.png'
+    } else if (rng1 === 5){
+        player1.src = '/imgs/dado5-removebg.png'
+    } else if (rng1 === 6){
+        player1.src = '/imgs/dado6-removebg.png'
+    }
+
+
+    if (rng2 === 1){
+        player2.src = '/imgs/dado1-removebg.png'
+    } else if (rng2 === 2){
+        player2.src = '/imgs/dado2-removebg.png'
+    } else if (rng2 === 3){
+        player2.src = '/imgs/dado3-removebg.png'
+    } else if (rng2 === 4){
+        player2.src = '/imgs/dado4-removebg.png'
+    } else if (rng2 === 5){
+        player2.src = '/imgs/dado5-removebg.png'
+    } else if (rng2 === 6){
+        player2.src = '/imgs/dado6-removebg.png'
+    }
+
+
+    if (rng1 > rng2){
+        winner.innerHTML = 'O player 1 é o vencedor!'
+        winner.style.fontSize = `3rem`
+        winner.style.color = 'red'
+    } else if (rng2 > rng1){
+        winner.innerHTML = 'O player 2 é o vencedor!'
+        winner.style.fontSize = `3rem`
+        winner.style.color = 'red'
+    } else if (rng1 === rng2){
+        winner.innerHTML = 'O sistema declara empate!'
+        winner.style.fontSize = `3rem`
+        winner.style.color = 'red'
+    } else{
+        winner.innerHTML = 'Erro no sistema, tente novamente!'
+        winner.style.fontSize = `3rem`
+        winner.style.color = 'red'
+    }
+})
